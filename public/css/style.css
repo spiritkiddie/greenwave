@@ -1,0 +1,961 @@
+/*
+
+Theme : Buzline Responsive Template
+Global style
+
+----------------------------------------------------------------------------------------------
+
+    Fonts Available : 
+        open sans               :: font-family: 'Open Sans', sans-serif;
+        Poppins                 :: font-family: 'Poppins', sans-serif;
+        glyphicons Icon Font    :: use class like - glyphicon glyphicon-envelope
+        Thimify icon font:      :: use class like - ti-arrow-up
+
+============================================================================================
+==============================================================================================
+
+CONTENTS :
+    *   1. General
+    *   2. Navigation
+    *   3. Slider
+    *   4. What We Do
+    *   5. Portfolio  
+    *   6. Testimonial
+    *   7. Clients
+    *   8. Footer
+    *   9. Contact Form
+    *   10. Sign In Page
+
+==============================================================================================
+=============================================================================================*/
+
+
+/**********************************************************************************************
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                            1. General 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+***********************************************************************************************/
+
+@charset "UTF-8";
+@import url("reset.css");
+@import url("themify-icons.css");
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+#loader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+.wrapper {
+    padding-left: 1em;
+    padding-right: 1em;
+    margin: 40vh auto;
+    display: table;
+    width: 195px;
+}
+
+.cssload-loader {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    margin: 3em;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    background: rgb(0, 0, 0);
+}
+
+.cssload-loader, .cssload-loader:before, .cssload-loader:after {
+    animation: 1.15s infinite ease-in-out;
+    -o-animation: 1.15s infinite ease-in-out;
+    -ms-animation: 1.15s infinite ease-in-out;
+    -webkit-animation: 1.15s infinite ease-in-out;
+    -moz-animation: 1.15s infinite ease-in-out;
+}
+
+.cssload-loader:before, .cssload-loader:after {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cssload-loader {
+    animation-name: cssload-loader;
+    -o-animation-name: cssload-loader;
+    -ms-animation-name: cssload-loader;
+    -webkit-animation-name: cssload-loader;
+    -moz-animation-name: cssload-loader;
+}
+
+@keyframes cssload-loader {
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@-o-keyframes cssload-loader {
+    from {
+        -o-transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        -o-transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@-ms-keyframes cssload-loader {
+    from {
+        -ms-transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        -ms-transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes cssload-loader {
+    from {
+        -webkit-transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes cssload-loader {
+    from {
+        -moz-transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        -moz-transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.p-type-1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.p-type-2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.6;
+    letter-spacing: 0.6px;
+}
+
+.p-type-3 {
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.6;
+    font-weight: 100;
+}
+
+.h5-type-1 {
+    font-family: poppins;
+    font-size: 54px;
+    margin: 5px 0;
+    font-weight: bolder;
+}
+
+.h3-type1 {
+    font-family: poppins;
+    font-size: 34px;
+    margin: 5px 0;
+    color: #909090;
+    font-weight: bolder;
+}
+
+.border-bar {
+    height: 5px;
+    width: 75px;
+    margin: 5px 0;
+    background: #08fa9c;
+}
+
+.border-bar2 {
+    height: 5px;
+    width: 75px;
+    margin: 5px auto;
+    background: #08fa9c;
+}
+
+.border-bar3 {
+    height: 3px;
+    width: 20px;
+    margin: 30px auto 10px;
+    background: #ffffff;
+}
+
+.border-bar4 {
+    height: 5px;
+    width: 80px;
+    margin: 5px;
+    background: #08fa9c;
+}
+
+.margin-t20 {
+    margin-top: 20px;
+}
+
+.margin-t50 {
+    margin-top: 50px;
+}
+
+.margin-t10 {
+    margin-top: 10px;
+}
+
+.margin-t30 {
+    margin-top: 30px;
+}
+
+.margin-tb10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.padding-tb50 {
+    padding: 50px 0;
+}
+
+.padding-tb100 {
+    padding: 100px 15px;
+}
+
+.color-grey {
+    color: #333;
+}
+
+.bg-grey {
+    background-color: rgb(247, 247, 247);
+}
+
+.icon-type1 {
+    font-size: 47px;
+    margin: 0 0 25px;
+    display: block;
+    color: #818483;
+}
+
+.icon-type2 {
+    font-size: 38px;
+    margin: 0;
+    display: block;
+    background: -webkit-linear-gradient(#00ff9c, #8b09da);
+    background: -moz-linear-gradient(#00ff9c, #8b09da);
+    background: -ms-linear-gradient(#00ff9c, #8b09da);
+    background: -o-linear-gradient(#00ff9c, #8b09da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: right;
+    color: #000;
+}
+
+.h4-type1 {
+    font-family: poppins;
+    font-size: 18px;
+    margin: 5px 0;
+    font-weight: bolder;
+    color: #131313;
+}
+
+.h4-type2 {
+    font-family: poppins;
+    font-size: 36px;
+    margin: 5px 0;
+    font-weight: bolder;
+    color: #080808;
+}
+
+.h4-type3 {
+    font-family: poppins;
+    font-size: 36px;
+    margin: 150px 0 0 2px;
+    font-weight: bolder;
+    color: #ffffff;
+    text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.17);
+}
+
+.p-type-5 {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 300;
+    text-align: justify;
+    width: 90%;
+}
+
+.p-type-4 {
+    font-size: 13px;
+    color: #2b2b2b;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.vcenter {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.p404_txt {
+    text-align: center;
+    margin-top: 40vh;
+    font-size: 100px;
+    color: rgba(95, 92, 92, 0.62);
+}
+
+.p404_txt span {
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.82);
+}
+
+
+/**********************************************************************************************
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                            2. Navigation 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+***********************************************************************************************/
+
+#navigation {
+    height: 172px;
+    /* height: 80px; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.2);
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+#navigation .main-nav-logo {
+    /* height: 40px;
+    margin: 20px 0; */
+    width: 250px;
+    height: 78px;
+    margin: 32px 60px;
+}
+
+#navigation .main-nav li {
+    display: inline-block;
+}
+
+#navigation .main-nav li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    padding: 33px 10px 34px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    display: inline-block;
+    transition: all 0.5s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+#navigation .main-nav li a:hover {
+    color: #08fa9c;
+    border-bottom: 1px solid rgb(8, 250, 156);
+}
+
+.login-btn {
+    padding: 10px 30px;
+    margin: 20px 0;
+    color: #000;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    background-color: #08fa9c;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.color_navigation {
+    background-color: #000;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+}
+
+#navigation .nav-btn-open {
+    color: #fff;
+    display: block;
+    width: 50px;
+    height: 50px;
+    float: right;
+    margin: 15px;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/**********************************************************************************************
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                            3. Slider
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+***********************************************************************************************/
+
+#slider {
+    width: 100%;
+    height: 100vh;
+}
+
+#slider img {
+    width: 100%;
+    height: 100%;
+}
+
+.flexslide-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.flex-caption {
+    margin-top: 30vh;
+    color: #fff;
+    font-size: 14px;
+}
+.flex-caption .p-type-2{
+    max-width: 800px;
+}
+
+/**********************************************************************************************
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                            4. Who we are
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+***********************************************************************************************/
+
+.parallax-window {
+    height: 500px;
+}
+
+
+/**********************************************************************************************
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                            5. Portfolio
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+***********************************************************************************************/
+
+.portfolio-item {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    cursor: url('../images/curser.png'), auto;
+    background-color: #000
+}
+
+.portfolio-item img {
+    transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -webkit-transition: all 0.8s ease;
+    -ms-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    cursor: url('../images/curser.png'), auto;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1);
+    opacity: 0.4;
+}
+
+
+/**********************************************************************************************
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                            6. Testimonial
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+***********************************************************************************************/
+
+#testimonial {
+    overflow: hidden;
+}
+
+.testimonial-text {
+    color: #fff;
+    font-size: 16px;
+    width: 70%;
+    margin: 20px 15%;
+    line-height: 1.6;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.testimonial h5 {
+    color: #08fa9c;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.testimonial h6 {
+    color: #fff;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 10px;
+}
+
+.testimonial .slides li {
+    padding: 0 0 50px 0;
+    margin-right: 0px !important;
+}
+
+.testimonial .flex-control-nav {
+    position: relative;
+}
+
+
+/**********************************************************************************************
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                            7. Clients
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+***********************************************************************************************/
+
+#clients {
+    background-color: #fff;
+}
+
+.clients .slides li {
+    padding: 0 0 50px 0;
+    margin-right: 0px !important;
+}
+
+.clients .slides li img {
+    transition: all 0.4s ease;
+    opacity: 0.7;
+}
+
+.clients .slides li img:hover {
+    opacity: 1;
+}
+
+.clients .flex-control-paging li a {
+    background-color: #000;
+}
+
+
+/**********************************************************************************************
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                            8. Footer
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+***********************************************************************************************/
+
+#footer {
+    background-color: #000;
+}
+
+#footer .footerlogo {
+    width: 150px;
+}
+
+#footer ul li a {
+    color: #a0a0a0;
+    text-decoration: none;
+    padding: 6px 0;
+    font-size: 12px;
+    display: block;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+}
+
+#footer ul li a:hover {
+    color: #08fa9c;
+}
+
+#footer .contact-details div {
+    overflow: auto;
+    padding: 6px 0;
+}
+
+#footer .contact-details div p, #footer .contact-details div a {
+    display: block;
+    float: left;
+    color: #c1c1c1;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 600;
+    padding: 0 0 0 6px;
+}
+
+#footer .contact-details div span {
+    display: table-cell;
+    float: left;
+    color: rgb(234, 234, 234);
+    font-weight: 700;
+    font-size: 16px;
+    vertical-align: middle;
+    opacity: 1;
+    padding-top: 4px;
+}
+
+.socialnlinks {
+    clear: both;
+    margin-top: 20px;
+}
+
+#footer .contact-details .socialnlinks a span {
+    display: block;
+    float: left;
+    font-weight: 600;
+    color: darkgrey;
+    font-size: 12px;
+    padding: 7px;
+    border-radius: 100%;
+    border: 2px solid #a9a9a9;
+    transition: all 0.4s ease;
+}
+
+#footer .contact-details .socialnlinks a:hover span {
+    border: 2px solid #08fa9c;
+    color: #08fa9c;
+    opacity: 1;
+}
+
+.footer-info-text {
+    color: #a9a9a9;
+    font-size: 12px;
+    padding: 20px 20px 0 0;
+    line-height: 1.6;
+    text-align: left;
+    width: 80%;
+    font-weight: 900;
+}
+
+.copyright {
+    color: #808280;
+    font-size: 12px;
+    font-weight: 700;
+    padding-top: 20px;
+}
+
+#about_header {
+    height: 300px;
+    /* background-image: url('../images/aboutus.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#services_header {
+    height: 300px;
+    /* background-image: url('../images/services.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#portfolio_header {
+    height: 300px;
+    /* background-image: url('../images/portfolio.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#contact_header {
+    height: 300px;
+    /* background-image: url('../images/contact.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/**********************************************************************************************
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                            9. Contact Form
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+***********************************************************************************************/
+
+#contact_form {
+    padding: 50px 0;
+}
+
+#contact_form .get_in_touch_form h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+}
+
+#contact_form .get_in_touch_form p {
+    font-size: 14px;
+    color: rgb(41, 41, 41);
+    padding: 20px 0;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    font-weight: 500;
+}
+
+#contact_form .get_in_touch_form .input_text {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ddd;
+    margin: 10px 0 0 0;
+    padding: 0 15px;
+    border-radius: 2px;
+    font-size: 14px;
+    box-shadow: 1px 4px 8px -3px rgb(221, 221, 221);
+    outline: none;
+}
+
+#contact_form .get_in_touch_form .input_textarea {
+    width: 100%;
+    height: 150px;
+    border: 1px solid #ddd;
+    margin: 10px 0 0 0;
+    padding: 10px 15px;
+    border-radius: 2px;
+    font-size: 14px;
+    box-shadow: 1px 4px 8px -3px rgb(221, 221, 221);
+    outline: none;
+}
+
+#contact_form .get_in_touch_form .input_submit {
+    width: 150px;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    margin: 20px 0;
+    color: #000;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    background-color: #08fa9c;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0px 4px 12px -1px rgba(8, 250, 156, 0.63);
+}
+
+#contact_form .contact_detail {
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.29);
+}
+
+#contact_form .contact_detail span.icon {
+    display: inline-block;
+    background-color: #fff;
+    font-size: 50px;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #08fa9c;
+    border-radius: 100%;
+    color: #1ec786;
+    margin: 10px 0;
+}
+
+#contact_form .contact_detail p {
+    font-size: 18px;
+    color: #424242;
+    margin: 10px 0;
+    line-height: 1.6;
+    padding: 16px;
+    text-align: center;
+}
+
+#googlemap {
+    width: 100%;
+    height: 400px;
+}
+
+#googlemap .map-frame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+/**********************************************************************************************
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                            10. Sign In Page
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+***********************************************************************************************/
+
+#signin_box {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.72);
+    position: fixed;
+    z-index: 1100;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+
+#signin_box .modal-contents p.heading_modal {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #000;
+}
+
+#signin_box .signin_cont {
+    margin-top: 100px;
+    padding: 50px;
+    background-color: #fff;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+#signin_box .signin_cont.show {
+    margin-top: 150px;
+    opacity: 1;
+}
+
+#signin_box .signin_cont p.heading_login {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #000;
+}
+
+#signin_box .signin_cont .input_text {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ddd;
+    margin: 10px 0 0 0;
+    padding: 0 15px;
+    border-radius: 2px;
+    font-size: 14px;
+    box-shadow: 1px 4px 8px -3px rgb(221, 221, 221);
+    outline: none;
+}
+
+#signin_box .signin_cont .input_submit {
+    width: 150px;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    margin: 20px 0;
+    color: #000;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    background-color: #08fa9c;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0px 4px 12px -1px rgba(8, 250, 156, 0.63);
+}
+
+#signin_box .signin_cont .forgot_pass {
+    font-size: 13px;
+    float: right;
+    display: block;
+    margin-top: 50px;
+}
+
+#signin_box .signin_cont .close_btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #eceff3;
+    color: #000;
+    cursor: pointer;
+}
+
+
+/**********************************************************************************************
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                            11. Modal
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+***********************************************************************************************/
+
+
+#modals {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.72);
+    position: fixed;
+    z-index: 1100;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#modals .modal-contents {
+    margin-top: 100px;
+    padding: 50px;
+    background-color: #fff;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+#modals .modal-contents.show {
+    margin-top: 150px;
+    opacity: 1;
+}
+
+#modals .modal-contents p.heading_modal {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#modals .modal-contents .close_btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #eceff3;
+    color: #000;
+    cursor: pointer;
+}
+
+.is_centered{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.margin-t25 {
+    margin-top: 25px;
+}
+
+.margin-t25 p {
+    line-height: 23px;
+    margin: 1em 0;
+}
+
+.full-info {
+    display: none;
+}
