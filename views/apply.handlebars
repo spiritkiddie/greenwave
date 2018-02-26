@@ -1,0 +1,80 @@
+<!-- About us heading-->
+<section id="about_header" parallax-window data-parallax="scroll" data-image-src="/images/aboutus.jpg" data-speed="0.4">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4 class="h4-type3">Apply Now!</h4>
+            <div class="border-bar4 margin-t20 "></div>
+        </div>
+        </div>
+    </div>
+</section>
+<!-- About us heading end-->
+
+<div class="container margin-t50" style="margin-bottom: 50px">
+    <form class="needs-validation is_formed" novalidate method="post" action="/route/apply" enctype="multipart/form-data">
+        {{#if error_msg}}
+            <div class="alert alert-warning" role="alert">
+                {{error_msg}}
+            </div>
+        {{/if}}
+        {{#if success_msg}}
+            <div class="alert alert-success" role="alert">
+                {{success_msg}}
+            </div>
+        {{/if}}
+        <div class="form-row">
+            <div class="col-md-12 mb-3">
+                <label for="fname">First name</label>
+                <input type="text" class="form-control" id="fname" name="firstname" placeholder="First name" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-12 mb-3">
+                <label for="lname">Last name</label>
+                <input type="text" class="form-control" id="lname" name="lastname" placeholder="Last name" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-12 mb-3">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-12 mb-3">
+                <label for="cv">CV</label>
+                <input type="file" class="form-control-file form-control" name="cv" id="cv" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+        </div>
+       
+        <button class="btn btn-primary" type="submit">Submit form</button>
+    </form>
+</div>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>

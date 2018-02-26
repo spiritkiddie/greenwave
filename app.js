@@ -1,6 +1,7 @@
 const express = require('express');
 const handlebars = require('express-handlebars');
 
+const flash = require('connect-flash');
 const session = require('express-session');
 const cors = require('cors')
 const bodyparser = require('body-parser');
@@ -41,21 +42,36 @@ app.use(cookieparser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //setting up express sessions
-// app.use(session({
-//     secret : config.secretKey,
-//     resave : true,
-//     saveUninitialized : false,
-//     cookie : { 
-//         maxAge : 24 * 60 * 60 * 1000 // 24 hours
-//     }
-// }));
+app.use(session({
+    secret : config.secretKey,
+    resave : true,
+    saveUninitialized : false,
+    cookie : { 
+        maxAge : 24 * 60 * 60 * 1000 // 24 hours
+    }
+}));
 
 //initialising passport
 // app.use(passport.initialize());
 // app.use(passport.session());
 
+
+//
+//setting up connect-flash messages
+//
+app.use(flash());
+
 //initialinsing cors
 app.use(cors());
+
+
+app.use(( req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    // res.locals.error = req.flash('error');
+    next();
+});
+
 
 //setting up routes
 app.use('/', index);

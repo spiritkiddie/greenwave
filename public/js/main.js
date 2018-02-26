@@ -96,27 +96,27 @@
 
   /*----------------------------------|| Sign in toggle ||----------------------------------------------*/
 
-  var login_btn = $('#navigation a.login-btn');
-  var signin_popup = $('#signin_box');
-  var signin_popup_cont = signin_popup.find('.signin_cont');
-  var signin_close = signin_popup.find('span.close_btn');
+  // var login_btn = $('#navigation a.login-btn');
+  // var signin_popup = $('#signin_box');
+  // var signin_popup_cont = signin_popup.find('.signin_cont');
+  // var signin_close = signin_popup.find('span.close_btn');
 
-  login_btn.on('click', function (e) {
-    e.preventDefault();
-    if (signin_popup_cont.hasClass('show')) {
-      signin_popup_cont.removeClass('show');
-      signin_popup.fadeOut(200);
-    } else {
-      signin_popup.fadeIn(200);
-      signin_popup_cont.addClass('show');
-    }
-    return false;
-  });
+  // login_btn.on('click', function (e) {
+  //   e.preventDefault();
+  //   if (signin_popup_cont.hasClass('show')) {
+  //     signin_popup_cont.removeClass('show');
+  //     signin_popup.fadeOut(200);
+  //   } else {
+  //     signin_popup.fadeIn(200);
+  //     signin_popup_cont.addClass('show');
+  //   }
+  //   return false;
+  // });
 
-  signin_close.on('click', function () {
-    signin_popup_cont.removeClass('show');
-    signin_popup.fadeOut(200);
-  });
+  // signin_close.on('click', function () {
+  //   signin_popup_cont.removeClass('show');
+  //   signin_popup.fadeOut(200);
+  // });
 
 })(jQuery);
 
