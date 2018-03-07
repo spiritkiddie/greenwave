@@ -60,6 +60,40 @@ router.get('/contact', (req, res) =>{
     res.render('contact');
 });
 
+router.post('/contact', (req, res) =>{
+    let fullname = req.body.fullname;
+    let email = req.body.email;
+    let mobile = req.body.mobile;
+    let subject =  req.body.subject;
+    let message  = req.body.message;
+
+    const mailOptions = {
+        from     : `GreenWave Contact Us <${(email).trim()}>`,
+        to       : Config.SMTP_HOST_EMAIL2,
+        subject  : `${(message).trim()}`,
+        //template : 'confirm_email',
+        html  : `
+                <p>Sender Fullname ${(fullname).trim()} </p>
+                <p>Sender Mobile ${(mobile).trim()} </p>
+                <p>Subject ${(subject).trim()} </p>
+                <p> Senders Message<br> ${(message).trim()}</p>
+                <p>Thanks</p>
+        `,
+    };
+
+    transporter.sendMail(mailOptions, (err, result) =>{
+        if (err) {
+            console.log(err);
+            req.flash('error_msg', 'Your Email was\'nt Delivered! Please Try Again!');
+            res.redirect('/route/contact');
+        } else {
+            req.flash('success_msg', 'Your Email is successfully Delivered!');
+            res.redirect('/route/contact');
+        }
+    });
+
+});
+
 router.get('/apply', (req, res) =>{
     res.render('apply');
 });
@@ -77,13 +111,13 @@ router.post('/apply', (req, res) =>{
         } else {
 
             let cv = req.file;
-            let firstname = req.body.firstname;
-            let lastname = req.body.lastname;
+            let firstname = req.body.firstname.toUpperCase();
+            let lastname = req.body.lastname.toUpperCase();
             let email = req.body.email;
 
             const mailOptions = {
                 from     : `GreenWave Send CV Portal <${email}>`,
-                to       : Config.SMTP_HOST_EMAIL,
+                to       : Config.SMTP_HOST_EMAIL1,
                 subject  : 'JOB CV',
                 //template : 'confirm_email',
                 attachments: [

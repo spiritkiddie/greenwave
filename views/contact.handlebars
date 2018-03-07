@@ -20,12 +20,23 @@
           <p>
             Greenwave Telecom Technology warmly welcome your messages. We have highly trained technical team, that will support all your problems within 24 hours.
           </p>
-          <form action="" method="" name="">
-            <input type="text" name="fullname" placeholder="Your Name" class="input_text">
-            <input type="email" name="email" placeholder="Your Email" class="input_text">
-            <input type="phone" name="mobile" placeholder="Your Mobile No." class="input_text">
-            <textarea name="message" placeholder="Your Message" class="input_textarea"></textarea>
-            <input type="submit" name="" value="SEND" class="input_submit">
+          {{#if error_msg}}
+              <div class="alert alert-warning" role="alert">
+                  {{error_msg}}
+              </div>
+          {{/if}}
+          {{#if success_msg}}
+              <div class="alert alert-success" role="alert">
+                  {{success_msg}}
+              </div>
+          {{/if}}
+          <form action="/route/contact" method="post" >
+            <input type="text" name="fullname" placeholder="Your Name" class="input_text" required>
+            <input type="email" name="email" placeholder="Your Email" class="input_text" required>
+            <input type="phone" name="mobile" placeholder="Your Mobile No." class="input_text" required>
+            <input type="text" name="subject" placeholder="Your Subject." class="input_text" required>
+            <textarea name="message" placeholder="Your Message" class="input_textarea" required></textarea>
+            <button type="submit" class="input_submit">Submit</button>
           </form>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12 margin-t30">
